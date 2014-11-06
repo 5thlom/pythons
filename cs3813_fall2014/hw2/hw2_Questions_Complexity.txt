@@ -1,0 +1,33 @@
+1. nbest.py
+	 What are the complexities of these algorithms? 
+
+	 nbesta:
+	 	nbesta will generate all AxB = { (x, y) | x in A, y in B } elements, which takes x^(y) or n^2. Then we sort the result which takes nlog(n) and the final step will be print the n results which is n
+	 	So it is n^2+nlogn+n = n^2
+
+	 nbestb:
+	 	nbesta will generate all AxB = { (x, y) | x in A, y in B } elements, which take n^2. Then we use quickselect, for quickselect only check left or right, so it only check half of the total elements, which n/2logn since quickselect will return the proper size of elements which we want n, the complexity will take n^2+n/2log => n^2
+
+	 nbestc:
+	 	nbestc will only generate at most 2n comparision, sort list a and list b takes nlog(n)+nlog(n) and we use heap, each time we push a (i,j) elements, we push (i+1,j) and (i,j+1) elements into heap, so the worst case will be push 2 times, so the complexity will takes 2nlog(n)+2n
+
+2. KmergeSort.py
+	What are the complexities of these algorithms?
+
+	KwaymergeSort, first we have n elements so we have logk for spliting, when we merge, merge first we have to push n sublist to the heap, which we use bubble up, it takes o(logn) time, then we have to pop n time from the heap until all elements of sublist filtered by heap, each pop will have a push if the current sublist still has elements, so the pop takes log(n) for mantain heap property, and each push will take o(log(n)) and we have a append each time to put new poped elements into a return list which take o(1),we have to do it n times which n is the total elements of list that need to sort. 
+	so we have o(k*n)+n(o(log(n))+o(nlog(n))+o(1)) for merge part
+	at the end we have logk split + merge part will be nlogk as the complexity of KmergeSort.
+
+3. DataStream.py
+	What are the complexities of these algorithms?
+
+	Since we have a n size data and a limited space of k size, which k much smaller than n. Using heap, since only k size, we push first k elements from the n size data into a heap, it takes klogn for k elements, then we check the rest n-k data, if each data in n-k is < the first elements of the heap, we pop(heap) and push the new element into heap, pop take o(log(n)) and push take o(log(n)) so we have klogn+2(n-k)logn which it is nlogn complexity
+
+6. Codeforces problem 395A1
+
+	Also, report how many "Wrong Answer", "Time Limit Exceeded", "Runtime Error", 
+   and "Memory Limit Exceeded" you got before your solution is accepted (for both solutions).
+
+   Since CodeForce is down, but i tried both my solution on the bigger scale, the first solution pass after 10 attemps, couple time wrong answers, but most of them stop at cases 15 which the question wants a pair of sum of 2000, it failed, because we have include when the middle pairs which it is a possile solution too. After then it all good, and the second version with 2 pointer failed the time limit of 1s which never tested on the smaller scale....
+
+   

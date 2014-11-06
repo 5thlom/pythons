@@ -1,0 +1,41 @@
+Questions:
+   1. When is top-down much faster than bottom-up?
+      give me an instance where top-down is 5 times faster than bottom-up.
+      (you need to provide the input, output, running times, 
+      and number of non-zero cells in opt in each of the two approaches).
+    Answer: failed to finish bottom-up
+    
+   2. When is bottom-up much faster than top-down?
+      give me an instance where bottom-up is 5 times faster.
+      Answer: failed to finish bottom-up
+   3. Would your top-down or bottom-up work if the weights are float numbers?
+      if not, how would you adapt them to float numbers?
+      Yes if i use dict to save these datas.
+
+ Questions:
+   1. When is top-down much faster than bottom-up?
+      give me an instance where top-down is 5 times faster than bottom-up.
+      (you need to provide the input, output, running times, 
+      and number of non-zero cells in opt in each of the two approaches).
+    Answer:
+    
+    top-down is should be fastest when there is only 2 recursion calls, the if statement is failed.
+
+
+    number of non-zero cells in opt
+    bdab
+	non-zero cells: 72
+	no lcs
+	non-zero cells: 0
+
+
+   2. When is bottom-up much faster than top-down?
+      give me an instance where bottom-up is 5 times faster.
+     
+    zhy:hw3 chh$ python lcs.py <lcs_input.txt 
+	bdab
+	non-zero cells: 72
+	0.000133991241455
+	zhy:hw3 chh$ python lcs2.py <lcs_input.txt 
+	bdab
+	7.89165496826e-05
